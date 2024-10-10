@@ -44,6 +44,7 @@
   textarea {
     @apply m-1 rounded bg-card p-1;
   }
+
 }
 
 @layer components {
@@ -52,6 +53,10 @@
   }
 
   .btn {
-    @apply hover: no-underline bg-blue-accent hover:bg-blue-accent-hover tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block;
+    @apply no-underline bg-blue-500 tracking-wider w-full text-center text-neutral-50 font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block;
+  }
+
+  .btn:hover {
+    @apply bg-blue-700 text-neutral-200;
   }
 }
