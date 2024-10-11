@@ -52,11 +52,6 @@ This project is a full stack web application developed with Next.js and MongoDB,
 ### Prerequisites
 
 Before starting, you’ll need to have the following tools installed on your machine:
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > baef2658b7f9faafffc4a36bd399a908b551817b
 
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org/en/)
