@@ -83,9 +83,4 @@ $ npm install
 $ npm run dev
 
 # The application will be running on: http://localhost:3000
-<<<<<<< HEAD
 ```
-
-=======
-
-> > > > > > > baef2658b7f9faafffc4a36bd399a908b551817b
