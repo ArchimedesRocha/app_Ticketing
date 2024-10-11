@@ -2,7 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-const TicketForm = () => {
+const TicketForm = ({ ticket }) => {
+  const EDITMODE = ticket._id === "new" ? false : true;
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -17,18 +18,31 @@ const TicketForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("/api/Tickets", {
-      method: "POST",
-      body: JSON.stringify({ formData }),
-      "content-type": "application/json",
-    });
 
-    if (!res.ok) {
-      throw new Error("Falha ao criar o ticket");
+    if (formData.category === "") {
+      alert("Por favor, selecione uma categoria válida.");
+      return;
     }
 
-    router.refresh();
-    router.push("/");
+    if (EDITMODE) {
+      const res = await fetch(`/api/Tickets/${ticket._id}`, {
+        method: "PUT",
+        body: JSON.stringify({ formData }),
+        "content-type": "application/json",
+      });
+
+      router.push("/");
+      router.refresh();
+    } else {
+      const res = await fetch("/api/Tickets", {
+        method: "POST",
+        body: JSON.stringify({ formData }),
+        "content-type": "application/json",
+      });
+
+      router.push("/");
+      router.refresh();
+    }
   };
 
   const startingTicketData = {
@@ -37,8 +51,17 @@ const TicketForm = () => {
     priority: 1,
     progress: 0,
     status: "Não iniciado",
-    category: "Problema na rota Checkout",
+    category: "",
   };
+
+  if (EDITMODE) {
+    startingTicketData["title"] = ticket.title;
+    startingTicketData["description"] = ticket.description;
+    startingTicketData["priority"] = ticket.priority;
+    startingTicketData["progress"] = ticket.progress;
+    startingTicketData["status"] = ticket.status;
+    startingTicketData["category"] = ticket.category;
+  }
 
   const [formData, setFormData] = useState(startingTicketData);
 
@@ -49,7 +72,7 @@ const TicketForm = () => {
         method="post"
         onSubmit={handleSubmit}
       >
-        <h3>Crie seu ticket</h3>
+        <h3>{EDITMODE ? "Atualize seu ticket" : "Crie seu ticket"}</h3>
         <label htmlFor="">Título</label>
         <input
           id="title"
@@ -76,7 +99,11 @@ const TicketForm = () => {
           id=""
           value={formData.category}
           onChange={handleChange}
+          required
         >
+          <option value="" disabled>
+            Selecione uma categoria
+          </option>
           <option value="Problema na API">Problema na API</option>
           <option value="Problema no Site">Problema no Site</option>
           <option value="Problema no Domínio">Problema no Domínio</option>
@@ -158,7 +185,11 @@ const TicketForm = () => {
           <option value="Iniciado">Iniciado</option>
           <option value="Finalizado">Finalizado</option>
         </select>
-        <input type="submit" className="btn" value="Criar ticket" />
+        <input
+          type="submit"
+          className="btn"
+          value={EDITMODE ? "Atualizar ticket" : "Criar ticket"}
+        />
       </form>
     </div>
   );
