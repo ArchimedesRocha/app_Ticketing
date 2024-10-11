@@ -2,13 +2,13 @@ const StatusDisplay = ({ state }) => {
   const getColor = (state) => {
     let color = "bg-slate-700";
     switch (state.toLowerCase()) {
-      case "finalizado":
+      case "finished":
         color = "bg-green-200";
         return color;
-      case "iniciado":
+      case "started":
         color = "bg-yellow-200";
         return color;
-      case "não iniciado":
+      case "not started":
         color = "bg-red-200";
         return color;
     }

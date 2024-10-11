@@ -20,11 +20,11 @@ function TicketCard({ ticket }) {
       day: "2-digit",
       hour: "2-digit",
       minute: "2-digit",
-      hour12: false,
+      hour12: true,
     };
 
     const date = new Date(timestamp);
-    const formattedDate = date.toLocaleString("pt-BR", options);
+    const formattedDate = date.toLocaleString("en-US", options);
 
     return formattedDate;
   };
@@ -54,7 +54,7 @@ function TicketCard({ ticket }) {
       <div className="flex mt-2">
         <div className="flex flex-col">
           <p className="text-xs my-1">
-            Criado em: {formatTimestamp(ticket.createdAt)}
+            Created at: {formatTimestamp(ticket.createdAt)}
           </p>
           <ProgressDisplay progress={ticket.progress} />
         </div>

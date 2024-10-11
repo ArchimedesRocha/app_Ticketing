@@ -50,7 +50,7 @@ const TicketForm = ({ ticket }) => {
     description: "",
     priority: 1,
     progress: 0,
-    status: "Não iniciado",
+    status: "Not started",
     category: "",
   };
 
@@ -72,8 +72,8 @@ const TicketForm = ({ ticket }) => {
         method="post"
         onSubmit={handleSubmit}
       >
-        <h3>{EDITMODE ? "Atualize seu ticket" : "Crie seu ticket"}</h3>
-        <label htmlFor="">Título</label>
+        <h3>{EDITMODE ? "Update your ticket" : "Create your ticket"}</h3>
+        <label htmlFor="">Title</label>
         <input
           id="title"
           name="title"
@@ -83,7 +83,7 @@ const TicketForm = ({ ticket }) => {
           value={formData.title}
         />
 
-        <label htmlFor="">Descrição</label>
+        <label htmlFor="">Description</label>
         <textarea
           id="description"
           name="description"
@@ -93,7 +93,7 @@ const TicketForm = ({ ticket }) => {
           rows="5"
         />
 
-        <label htmlFor="">Categoria</label>
+        <label htmlFor="">Category</label>
         <select
           name="category"
           id=""
@@ -102,15 +102,15 @@ const TicketForm = ({ ticket }) => {
           required
         >
           <option value="" disabled>
-            Selecione uma categoria
+            Select Category
           </option>
-          <option value="Problema na API">Problema na API</option>
-          <option value="Problema no Site">Problema no Site</option>
-          <option value="Problema no Domínio">Problema no Domínio</option>
-          <option value="Problema na Hospedagem">Problema na Hospedagem</option>
+          <option value="API Problem">API Problem</option>
+          <option value="Website Problem">Website Problem</option>
+          <option value="Domain Problem">Domain Problem</option>
+          <option value="Host Problem">Host Problem</option>
         </select>
 
-        <label htmlFor="">Prioridade</label>
+        <label htmlFor="">Priority</label>
         <div>
           <input
             id="priority-1"
@@ -181,14 +181,14 @@ const TicketForm = ({ ticket }) => {
           onChange={handleChange}
           id=""
         >
-          <option value="Não iniciado">Não iniciado</option>
-          <option value="Iniciado">Iniciado</option>
-          <option value="Finalizado">Finalizado</option>
+          <option value="Not started">Not started</option>
+          <option value="Started">Started</option>
+          <option value="Finished">Finished</option>
         </select>
         <input
           type="submit"
           className="btn"
-          value={EDITMODE ? "Atualizar ticket" : "Criar ticket"}
+          value={EDITMODE ? "Update ticket" : "Create ticket"}
         />
       </form>
     </div>

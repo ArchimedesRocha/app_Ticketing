@@ -1,27 +1,8 @@
 # Ticket Management System
 
 ### Page Home
-<<<<<<< HEAD
 
 <img src="./public/old-home.png">
-=======
-<img src="./public/old-home.png">
-
-### Page Home Redesign
-<img src="./public/new-home.png">
-
-### Page Painel 
-<img src="./public/old-painel.png">
-
-### Page Painel Redesign
-<img src="./public/new-painel.png">
-
-### Page Ticket Details
-<img src="./public/old-ticket-details.png">
-
-### Page Ticket Details Redesign
-<img src="./public/new-ticket-details.png">
->>>>>>> baef2658b7f9faafffc4a36bd399a908b551817b
 
 ### Shortcuts
 
@@ -66,7 +47,9 @@ Before starting, you’ll need to have the following tools installed on your mac
 <<<<<<< HEAD
 
 =======
->>>>>>> baef2658b7f9faafffc4a36bd399a908b551817b
+
+> > > > > > > baef2658b7f9faafffc4a36bd399a908b551817b
+
 - [Git](https://git-scm.com)
 - [Node.js](https://nodejs.org/en/)
 - [MongoDB](https://www.mongodb.com)
@@ -94,5 +77,7 @@ $ npm run dev
 # The application will be running on: http://localhost:3000
 <<<<<<< HEAD
 ```
+
 =======
->>>>>>> baef2658b7f9faafffc4a36bd399a908b551817b
+
+> > > > > > > baef2658b7f9faafffc4a36bd399a908b551817b
