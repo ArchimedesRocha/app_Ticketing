@@ -2,7 +2,15 @@
 
 ### Page Home
 
-<img src="./public/old-home.png">
+<img src="./public/Home.png">
+
+### Page Crete Ticket
+
+<img src="./public/New.png">
+
+### Page Edit Ticket
+
+<img src="./public/Update.png">
 
 ### Shortcuts
 
