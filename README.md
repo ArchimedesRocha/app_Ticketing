@@ -20,9 +20,7 @@
  <a href="#project-status">Project Status</a> • 
  <a href="#features">Features</a> • 
  <a href="#prerequisites">Prerequisites</a> • 
- <a href="#running-the-project">Running the Project</a> • 
- <a href="#author">Author</a> • 
- <a href="#license">License</a>
+ <a href="#running-the-project">Running the Project</a>
 </p>
 
 ---
